@@ -8,21 +8,21 @@ import javax.swing.JOptionPane;
 public class HighLowGame {
 
 	public static void main(String[] args) {
-		
-		
-		
-		
 		Random random = new Random();
 		int number = random.nextInt(100)+1;
 		
 		
-	for(int i=10; i>0;i--) {
+	for(int i=6; i>0;i--) {
 		int triesleft = i -1;
 		String guess =JOptionPane.showInputDialog("Guess a number between 1-100, you have "+i+" tries");
+		if(guess.isBlank()) {
+			System.exit(0);
+		}
+		
 		int guessNum = Integer.parseInt(guess);
 		
 		if(guessNum == number) {
-			JOptionPane.showMessageDialog(null, guessNum+" Is Correct. You Win, Congratulations");
+			JOptionPane.showMessageDialog(null, guessNum+" is Correct\nYou Win, Congratulations");
 			System.exit(0);
 		}
 		else if(guessNum > number) {
@@ -31,10 +31,6 @@ public class HighLowGame {
 		else if(guessNum<number) {
 			JOptionPane.showMessageDialog(null, "Guess was too low\nTries Left: "+triesleft);
 		}
-		else if(guess.isBlank()){
-			JOptionPane.showMessageDialog(null, "No Guess\nTries Left: "+triesleft);
-		}
-		
 	}
 		JOptionPane.showMessageDialog(null, "You Lose\nCorrect Answer: "+number);
 		
