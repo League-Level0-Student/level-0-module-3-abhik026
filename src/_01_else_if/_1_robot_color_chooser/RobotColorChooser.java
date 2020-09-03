@@ -12,7 +12,7 @@ public class RobotColorChooser {
 	
 		Robot rob = new Robot();
 		rob.setPenWidth(10);
-		rob.setSpeed(75);
+		rob.setSpeed(50);
 		rob.penDown();
 	
 		for(int e = 0; e<1;) {
