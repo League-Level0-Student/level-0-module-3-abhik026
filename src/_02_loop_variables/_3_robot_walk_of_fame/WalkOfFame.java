@@ -21,7 +21,7 @@ public class WalkOfFame {
 	for(int e= 0; e<10; e++) {
 		int speed = ran.nextInt(100-30+1)+30;
 		rob.setSpeed(speed);
-		System.out.println(speed);
+		
 		for(int i = 0; i<5; i++) {
 		rob.move(75);
 		rob.turn(144);
